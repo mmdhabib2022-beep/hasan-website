@@ -146,6 +146,57 @@ footer {
         font-size: 28px;
     }
 }
+
+/* HASAN WEBSITE ANIMATIONS */
+.hero {
+    animation: fadeUp 1.2s ease both;
+}
+
+.profile {
+    animation: floatPhoto 4s ease-in-out infinite;
+    transition: transform .4s, box-shadow .4s;
+}
+
+.profile:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px #00e6a0;
+}
+
+.skill {
+    transition: transform .35s, box-shadow .35s;
+}
+
+.skill:hover {
+    transform: translateY(-9px) scale(1.04);
+    box-shadow: 0 0 20px #00e6a0;
+}
+
+.btn {
+    transition: transform .3s, box-shadow .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px #00e6a0;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatPhoto {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
 </style>
 </head>
 
