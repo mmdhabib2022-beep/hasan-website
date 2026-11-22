@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasan Website</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080f1e;
+    color: white;
+}
+
+header {
+    background: #111c30;
+    padding: 18px 12px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 27px;
+    color: #00e6a0;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.hero {
+    text-align: center;
+    padding: 85px 15px;
+    background: linear-gradient(135deg,#101e35,#075c50);
+}
+
+.profile {
+    width: 135px;
+    height: 135px;
+    border-radius: 50%;
+    border: 4px solid #00e6a0;
+    margin: auto auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #142c3b;
+    color: #00e6a0;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00e6a0;
+}
+
+.hero p {
+    color: #d0e0e0;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    background: #00e6a0;
+    color: #061b16;
+    padding: 14px 28px;
+    border-radius: 30px;
+    margin-top: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 65px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #00e6a0;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 2;
+    color: #cbd5e1;
+}
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background: #17263d;
+    border: 1px solid #00a77b;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.contact p {
+    margin: 18px;
+    color: #cbd5e1;
+}
+
+.contact a {
+    color: #00e6a0;
+}
+
+footer {
+    background: #111c30;
+    text-align: center;
+    padding: 25px;
+    color: #bdc9d8;
+}
+
+@media(max-width: 500px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">HASAN WEBSITE</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+
+    <div class="profile">H</div>
+
+    <h1>Hello, I'm <span>Hasan</span></h1>
+
+    <p>
+        Welcome To My Personal Website<br>
+        আসসালামু আলাইকুম, আমার ওয়েবসাইটে স্বাগতম।
+    </p>
+
+    <a href="#about" class="btn">Explore More</a>
+
+</div>
+
+<section class="about" id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        আসসালামু আলাইকুম।
+        আমি হাসান। এটি আমার ব্যক্তিগত ওয়েবসাইট।
+        এখানে আমার পরিচিতি, দক্ষতা এবং
+        যোগাযোগের তথ্য দেওয়া হয়েছে।
+        আমার ওয়েবসাইটে আপনাকে স্বাগতম।
+    </p>
+
+</section>
+
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Web Design</div>
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>Email: yourmail@example.com</p>
+
+    <p>Facebook: Your Facebook Link</p>
+
+    <p>WhatsApp: Your WhatsApp Number</p>
+
+    <a href="mailto:yourmail@example.com" class="btn">
+        Send Email
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2026 Hasan Website</p>
+    <p>All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
