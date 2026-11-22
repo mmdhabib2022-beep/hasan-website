@@ -236,6 +236,51 @@ footer {
     to { transform: rotate(360deg); }
 }
 
+
+/* VISIBLE PREMIUM ANIMATIONS */
+
+body {
+    background-size: 200% 200%;
+    animation: backgroundMove 12s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundMove {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* Clearly visible glowing skill cards */
+.skill {
+    animation: skillGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes skillGlow {
+    from {
+        box-shadow: 0 0 5px rgba(0, 230, 160, .25);
+        border-color: rgba(0, 230, 160, .4);
+    }
+    to {
+        box-shadow: 0 0 24px rgba(0, 230, 160, .8);
+        border-color: #00e6a0;
+    }
+}
+
+/* Brighter rotating profile ring */
+.profile-ring::before {
+    border-width: 4px;
+    border-top-color: #00e6a0;
+    border-right-color: #00bfff;
+    border-bottom-color: #00e6a0;
+    box-shadow: 0 0 12px #00e6a0;
+    animation: spinRing 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body, .skill, .profile-ring::before {
+        animation: none !important;
+    }
+}
+
 </style>
 </head>
 
