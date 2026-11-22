@@ -197,6 +197,32 @@ footer {
     }
 }
 
+
+/* Rotating profile ring */
+.profile-ring {
+    position: relative;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%;
+    isolation: isolate;
+}
+
+.profile-ring::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-top-color: #00e6a0;
+    border-right-color: #00bfff;
+    border-radius: 50%;
+    animation: spinRing 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spinRing {
+    to { transform: rotate(360deg); }
+}
+
 </style>
 </head>
 
@@ -212,7 +238,7 @@ footer {
     </nav>
 </header>
 <div class="hero" id="home">
-<img src="profile.png" class="profile" alt="Hasan">
+<div class="profile-ring"><img src="profile.png" class="profile" alt="Hasan"></div>
     <h1>Hello, I'm <span>Hasan</span></h1>
 
     <p>
