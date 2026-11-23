@@ -25,7 +25,7 @@ if ("serviceWorker" in navigator) {
     <p>আমি হাসান। আমি ওয়েব ডিজাইন ও প্রোগ্রামিং শিখছি।</p>
 
     <div class="menu">
-        <button onclick="showMessage('আমার নাম হাসান।')">👤 My Profile</button>
+        <button onclick="showProfile()">👤 My Profile</button>
 
         <button onclick="showMessage('আমি HTML, CSS ও JavaScript শিখছি।')">📚 My Learning</button>
 
@@ -37,7 +37,10 @@ if ("serviceWorker" in navigator) {
     <script>
     function showMessage(message) {
         alert(message);
-    }
+    } 
+   function showProfile() {
+    alert("নাম: হাসান\nশিখছি: HTML, CSS ও JavaScript\nলক্ষ্য: ওয়েব ডেভেলপার হওয়া");
+}
     </script>
 
 <script>
