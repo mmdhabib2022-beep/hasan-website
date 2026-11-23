@@ -359,6 +359,39 @@ body.light-mode .skill {
     background: #ffffff;
     color: #172033;
 }
+.menu-toggle {
+    display: none;
+    background: #00e6a0;
+    color: #061b16;
+    border: none;
+    padding: 8px 14px;
+    font-size: 25px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: block;
+    }
+    header {
+        position: relative;
+    }
+    header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px;
+        background: #102033;
+    }
+}
+
+@media (max-width: 900px) {
+    header nav.show-menu {
+        display: flex;
+    }
+}
+
 </style>	
 </head>
 
@@ -369,6 +402,9 @@ body.light-mode .skill {
     ☀️ Light Mode
 </button>
     <div class="logo">HASAN WEBSITE</div>
+<button class="menu-toggle" id="menuToggle">
+    ☰
+</button>
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -450,6 +486,13 @@ themeToggle.addEventListener("click", function() {
         themeToggle.textContent = "☀️ Light Mode";
     }
 });
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.querySelector("header nav");
+
+menuToggle.addEventListener("click", function() {
+    navMenu.classList.toggle("show-menu");
+});
+
 </script>
 </body>
 </html>
