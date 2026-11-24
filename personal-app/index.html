@@ -35,9 +35,18 @@ if ("serviceWorker" in navigator) {
 
         <button onclick="showMessage('আমার ওয়েবসাইট শিগগিরই এখানে যুক্ত হবে।')">🌐 My Website</button>
 
-        <button onclick="showMessage('আমার ব্যক্তিগত নোট।')">📝 My Notes</button>
+        <button onclick="showNotes()">📝 My Notes</button>
        <button onclick="showPhotos()">🖼️ My Photos</button>
     </div>
+       <section id="notes" hidden>
+    <h2>📝 আমার নোট</h2>
+
+    <textarea id="noteText" placeholder="এখানে তোমার নোট লেখো..."></textarea>
+
+    <button onclick="saveNote()">💾 Save Note</button>
+
+    <p id="savedMessage"></p>
+</section>
        <section id="photos" hidden>
     <h2>আমার ছবি</h2>
     <img src="images/photo1.png" alt="আমার ছবি" class="my-photo">
@@ -49,6 +58,21 @@ if ("serviceWorker" in navigator) {
     } 
    function showProfile() {
     alert("নাম: হাসান\nশিখছি: HTML, CSS ও JavaScript\nলক্ষ্য: ওয়েব ডেভেলপার হওয়া");
+}
+  function showNotes() {
+    document.getElementById("notes").hidden = false;
+
+    document.getElementById("noteText").value =
+        localStorage.getItem("myNote") || "";
+}
+
+function saveNote() {
+    const note = document.getElementById("noteText").value;
+
+    localStorage.setItem("myNote", note);
+
+    document.getElementById("savedMessage").textContent =
+        "নোট সফলভাবে Save হয়েছে!";
 }
    function showPhotos() {
     document.getElementById("photos").hidden = false;
