@@ -1,4 +1,4 @@
-const CACHE_NAME = "hasan-app-v5";
+const CACHE_NAME = "hasan-app-v6";
 
 const FILES = [
   "./",
