@@ -38,47 +38,106 @@ if ("serviceWorker" in navigator) {
         <button onclick="showNotes()">📝 My Notes</button>
        <button onclick="showPhotos()">🖼️ My Photos</button>
     </div>
-       <section id="notes" hidden>
+</section>
+<section id="notes" hidden>
     <h2>📝 আমার নোট</h2>
 
-    <textarea id="noteText" placeholder="এখানে তোমার নোট লেখো..."></textarea>
+    <input type="text" id="noteTitle" placeholder="নোটের শিরোনাম">
+
+    <textarea id="noteText" placeholder="এখানে নোট লেখো..."></textarea>
 
     <button onclick="saveNote()">💾 Save Note</button>
 
     <p id="savedMessage"></p>
-</section>
-       <section id="photos" hidden>
+    <div id="notesList"></div>
+</section>       <section id="photos" hidden>
     <h2>আমার ছবি</h2>
     <img src="images/photo1.png" alt="আমার ছবি" class="my-photo">
 </section>
 
-    <script>
-    function showMessage(message) {
-        alert(message);
-    } 
-   function showProfile() {
+<script>
+function showMessage(message) {
+    alert(message);
+}
+
+function showProfile() {
     alert("নাম: হাসান\nশিখছি: HTML, CSS ও JavaScript\nলক্ষ্য: ওয়েব ডেভেলপার হওয়া");
 }
-  function showNotes() {
-    document.getElementById("notes").hidden = false;
 
-    document.getElementById("noteText").value =
-        localStorage.getItem("myNote") || "";
+let notes = JSON.parse(localStorage.getItem("myNotes")) || [];
+let editIndex = -1;
+
+function showNotes() {
+    document.getElementById("notes").hidden = false;
+    displayNotes();
 }
 
 function saveNote() {
-    const note = document.getElementById("noteText").value;
+    const title = document.getElementById("noteTitle").value.trim();
+    const text = document.getElementById("noteText").value.trim();
 
-    localStorage.setItem("myNote", note);
+    if (!title || !text) {
+        alert("শিরোনাম ও নোট লিখো!");
+        return;
+    }
 
-    document.getElementById("savedMessage").textContent =
-        "নোট সফলভাবে Save হয়েছে!";
+    if (editIndex === -1) {
+        notes.push({title, text});
+    } else {
+        notes[editIndex] = {title, text};
+    }
+
+    localStorage.setItem("myNotes", JSON.stringify(notes));
+
+    document.getElementById("noteTitle").value = "";
+    document.getElementById("noteText").value = "";
+    editIndex = -1;
+
+    document.getElementById("savedMessage").textContent = "নোট Save হয়েছে!";
+    displayNotes();
 }
-   function showPhotos() {
+
+function displayNotes() {
+    const list = document.getElementById("notesList");
+    list.innerHTML = "";
+
+    notes.forEach((note, index) => {
+        const item = document.createElement("div");
+        const heading = document.createElement("h3");
+        const content = document.createElement("p");
+        const edit = document.createElement("button");
+        const del = document.createElement("button");
+
+        heading.textContent = note.title;
+        content.textContent = note.text;
+
+        edit.textContent = "✏️ Edit";
+        edit.onclick = () => {
+            document.getElementById("noteTitle").value = note.title;
+            document.getElementById("noteText").value = note.text;
+            editIndex = index;
+        };
+
+        del.textContent = "🗑️ Delete";
+        del.onclick = () => {
+            if (confirm("এই নোটটি মুছে ফেলবে?")) {
+                notes.splice(index, 1);
+                localStorage.setItem("myNotes", JSON.stringify(notes));
+                displayNotes();
+            }
+        };
+
+        item.append(heading, content, edit, del);
+        list.appendChild(item);
+    });
+}
+
+function showPhotos() {
     document.getElementById("photos").hidden = false;
 }
-    </script>
 
+displayNotes();
+</script>
 <script>
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js");
@@ -104,5 +163,6 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 </script>
+     <script src="notes.js"></script>
 </body>
 </html>
