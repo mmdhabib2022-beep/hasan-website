@@ -17,6 +17,10 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 <body>
+     <section class="clock-box">
+    <h2 id="clock">00:00:00</h2>
+    <p id="date"></p>
+</section>
 
     <h1>আসসালামু আলাইকুম</h1>
 
@@ -55,6 +59,26 @@ if ("serviceWorker" in navigator) {
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("./sw.js");
 }
+</script>
+
+<script>
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString("bn-BD");
+
+    document.getElementById("date").textContent =
+        now.toLocaleDateString("bn-BD", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 </script>
 </body>
 </html>

@@ -53,3 +53,21 @@ button {
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.clock-box {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.clock-box h2 {
+    font-size: 32px;
+    margin: 5px;
+}
+
+.clock-box p {
+    font-size: 17px;
+}
