@@ -1,10 +1,11 @@
-const CACHE_NAME = "hasan-app-v6";
+const CACHE_NAME = "hasan-app-v7";
 
 const FILES = [
   "./",
   "./index.html",
   "./style.css",
   "./gallery-style.css",
+  "./notes.js",
   "./manifest.json",
   "./icon.svg",
   "./images/photo1.png"
