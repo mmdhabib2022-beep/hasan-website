@@ -32,7 +32,12 @@ if ("serviceWorker" in navigator) {
         <button onclick="showMessage('আমার ওয়েবসাইট শিগগিরই এখানে যুক্ত হবে।')">🌐 My Website</button>
 
         <button onclick="showMessage('আমার ব্যক্তিগত নোট।')">📝 My Notes</button>
+       <button onclick="showPhotos()">🖼️ My Photos</button>
     </div>
+       <section id="photos" hidden>
+    <h2>আমার ছবি</h2>
+    <img src="images/photo1.png" alt="আমার ছবি" class="my-photo">
+</section>
 
     <script>
     function showMessage(message) {
@@ -40,6 +45,9 @@ if ("serviceWorker" in navigator) {
     } 
    function showProfile() {
     alert("নাম: হাসান\nশিখছি: HTML, CSS ও JavaScript\nলক্ষ্য: ওয়েব ডেভেলপার হওয়া");
+}
+   function showPhotos() {
+    document.getElementById("photos").hidden = false;
 }
     </script>
 

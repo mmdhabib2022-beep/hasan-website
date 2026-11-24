@@ -1,11 +1,12 @@
-const CACHE_NAME = "hasan-app-v1";
+const CACHE_NAME = "hasan-app-v2";
 
 const FILES = [
   "./",
   "./index.html",
   "./style.css",
   "./manifest.json",
-  "./icon.svg"
+  "./icon.svg",
+"./images/photo1.png"
 ];
 
 self.addEventListener("install", event => {

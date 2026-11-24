@@ -40,3 +40,16 @@ button {
     margin: 8px;
     width: 90%;
 }
+#photos {
+    margin-top: 25px;
+    padding: 15px;
+    text-align: center;
+}
+
+.my-photo {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
